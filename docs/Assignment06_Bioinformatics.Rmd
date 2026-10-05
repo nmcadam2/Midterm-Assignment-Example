@@ -1,0 +1,66 @@
+---
+title: "Assignment 06 — Bioinformatics Pipeline"
+author: "BIOS 30318/60318: Introduction to Biocomputing, Fall 2026"
+date: "Week 8 | Lectures L13–L14 | Tutorial T07"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+
+## Overview
+
+Build and execute a bioinformatics pipeline using sequence alignment (muscle) and profile hidden Markov models (hmmer) to search for a gene family across multiple bacterial proteomes.
+
+**Points: 50 | Difficulty: ★★★★☆ | Midterm Assignment**
+
+---
+
+## Background
+
+You will use **muscle** for multiple sequence alignment and **hmmer** (hmmbuild + hmmsearch) for profile-based sequence searching. The reference sequences and proteomes are available in the `bioinformaticsProject/` directory.
+
+---
+
+## Exercises
+
+### 1 (8 pts)
+a) Select a set of reference sequences from the `ref_sequences/` directory. Use `muscle` to create a multiple sequence alignment. Show the command and briefly describe the output format.
+
+b) Use `hmmbuild` to build an HMM profile from your alignment. Report the command and the name of your profile.
+
+### 2 (12 pts)
+a) Use `hmmsearch` to search your HMM profile against **one** proteome from the `proteomes/` directory. Save the output with `--tblout`.
+
+b) Examine the output. How many significant hits (E-value < 0.001) did you find? Show the `grep` or `awk` command used to filter.
+
+c) Explain in 2–3 sentences what the E-value represents and why we use a threshold.
+
+### 3 (13 pts)
+Write a bash script called `run_pipeline.sh` that:
+
+1. Takes a reference FASTA file and a directory of proteome files as arguments
+2. Builds the alignment and HMM profile
+3. Searches **every** proteome in the directory
+4. Outputs a CSV file `pipeline_results.csv` with columns: `proteome,num_hits`
+
+Include error checking (e.g., verify files exist). Test on at least 5 proteomes.
+
+### 4 (9 pts)
+a) Run your pipeline on all proteomes in the `proteomes/` directory.
+
+b) Which proteome had the most hits? Which had the fewest (or zero)?
+
+c) What biological question could the variation in hit counts answer?
+
+### 5 (8 pts)
+a) Describe the difference between **pairwise alignment** and **profile-based searching**. When would you use each?
+
+b) Why is building an HMM profile from multiple sequences more sensitive than using a single sequence as a BLAST query?
+
+---
+
+## Submission
+
+Submit `run_pipeline.sh`, `pipeline_results.csv`, and `assignment06_NETID.txt` by 10:00 PM on the due date with commands, outputs, and explanations.
