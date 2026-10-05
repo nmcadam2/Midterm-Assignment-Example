@@ -8,18 +8,18 @@ muscle for multiple sequence alignments (MSA)
 hmmer for gene searching
 
 ### Resources from Dr. Mishra
-https://bip.weizmann.ac.il/education/materials/gcg/hmmanalysis.html
-https://en.wikipedia.org/wiki/HMMER
-Nature Biotechnology paper that explains HMMs written by the creator of hmmer
+* https://bip.weizmann.ac.il/education/materials/gcg/hmmanalysis.html
+* https://en.wikipedia.org/wiki/HMMER
+* Nature Biotechnology paper that explains HMMs written by the creator of hmmer
 
 # Exercises
 ## Point Breakdown
-- 1.) 8 pts
-- 2.) 12 pts
-- 3.) 13 pts
-- 4.) 9 pts
-- 5.) 8 pts
-- Total: 50 pts
+1.) 8 pts
+2.) 12 pts
+3.) 13 pts
+4.) 9 pts
+5.) 8 pts
+Total: 50 pts
 
 ## Exercise 1
 - a.) Select a set of reference sequences from the ref_sequences/ directory. Use 
